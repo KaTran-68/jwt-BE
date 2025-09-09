@@ -1,5 +1,6 @@
 import express from "express"
 const homeController = require('../controller/homeController')
+const apiController = require('../controller/apiController')
 
 const router = express.Router()
 
@@ -12,6 +13,8 @@ const initWebRoutes = (app) => {
      router.post('/users/create-user', homeController.handleCreateUser)
      router.post('/users/update-user/:id', homeController.handleUpdateUser)
      router.post('/users/delete-user/:id', homeController.handleDeleteUser)
+
+     router.get("/api/test-api", apiController.testApi)
 
      return app.use('/', router)
 }
