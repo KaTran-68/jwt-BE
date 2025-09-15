@@ -96,7 +96,7 @@ const createUser = async (userData) => {
 
           await db.User.create({...userData, password: hashPassword})
           return {
-               EM: 'Create Ok',
+               EM: 'Create an user successfully',
                EC: 0,
                DT: []
           }
@@ -128,7 +128,7 @@ const updateUser = async (data) => {
                })
 
                return {
-                    EM: 'Update user successfully',
+                    EM: 'Update an user successfully',
                     EC: 0,
                     DT: ''
                }

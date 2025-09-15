@@ -1,7 +1,13 @@
 import userService from '../service/userService'
 
 const handleUserPage = async (req, res) => {
+  console.log('Cookies: ', req.cookies)
+
+  console.log('Signed Cookies: ', req.signedCookies)
+
+  
   const usersList = await userService.getUserList()
+
   return res.render('users',{
     usersList
   });
