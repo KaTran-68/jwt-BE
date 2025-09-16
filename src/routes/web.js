@@ -14,8 +14,6 @@ const initWebRoutes = (app) => {
      router.post('/users/update-user/:id', homeController.handleUpdateUser)
      router.post('/users/delete-user/:id', homeController.handleDeleteUser)
 
-     router.get("/api/test-api", apiController.testApi)
-
      return app.use('/', router)
 }
 

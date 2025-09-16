@@ -1,3 +1,4 @@
+import { access } from 'fs'
 import userApiService from '../service/userApiService'
 
 const readFunc = async (req, res) => {
@@ -84,9 +85,21 @@ const deleteFunc = async (req, res) => {
      }
 }
 
+const getUserAccount = async (req, res) => {
+     return res.status(200).json({
+          EM: 'OK!',
+          EC: '0',
+          DT: {
+               ...req.user,
+               access_token: req.token,
+          }
+     })
+}
+
 module.exports = {
      readFunc,
      createFunc,
      updateFunc,
-     deleteFunc
+     deleteFunc,
+     getUserAccount
 }
