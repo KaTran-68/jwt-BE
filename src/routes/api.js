@@ -2,6 +2,7 @@ import express from "express"
 const apiController = require('../controller/apiController')
 const userController = require('../controller/userController')
 const groupController = require('../controller/groupController')
+const roleController = require('../controller/roleController')
 import {checkUserJWT, checkUserPermission} from '../middleware/JWTAction'
 
 const router = express.Router()
@@ -20,6 +21,11 @@ const initApiRoutes = (app) => {
      router.post("/user/create", userController.createFunc)
      router.put("/user/update", userController.updateFunc)
      router.delete("/user/delete", userController.deleteFunc)
+ 
+     router.get("/role/read", roleController.readFunc)
+     router.post("/role/create", roleController.createFunc)
+     router.put("/role/update", roleController.updateFunc)
+     router.delete("/role/delete", roleController.deleteFunc)
 
      router.get("/group/read", groupController.readFunc)
 
